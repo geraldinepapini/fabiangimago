@@ -1,0 +1,269 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap');
+
+/* Variables */
+:root {
+  --azul: #00CEE3;
+  --gris-oscuro: #4F5966;
+  --blanco: #FFFFFF;
+  --negro: #111111;
+}
+
+/* Generales */
+body {
+  font-family: 'Manrope', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+/* Estilo para el header */
+.main-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  background-color: white;
+}
+
+/* Logo adaptativo */
+.logo-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo-img {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navegación */
+.main-nav {
+  background-color: #3d4451;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.main-nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Manrope', sans-serif;
+}
+
+.main-nav a:hover {
+  color: #00cfe8;
+}
+
+/* Responsive para celular */
+@media screen and (max-width: 768px) {
+  .logo-img {
+    width: 120px;
+  }
+
+  .main-nav a {
+    display: inline-block;
+    margin: 10px 8px;
+    font-size: 14px;
+  }
+}
+
+
+/* Intro */
+.phrase {
+  font-style: italic;
+  text-align: center;
+  font-size: 20px;
+  color: var(--negro);
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+/* Galería */
+main {
+  padding: 2rem;
+}
+
+.work {
+  margin-bottom: 3rem;
+}
+.work p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  color: #444;
+  font-size: 1rem;
+}
+
+.work h2 {
+  text-align: center;
+  color: var(--negro);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.work img {
+  width: 100%;
+  height: 200px; /* O el alto que desees */
+  object-fit: cover;
+  aspect-ratio: 4 / 3; /* Nuevo valor útil en CSS moderno */
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+
+.work img:hover {
+  transform: scale(1.05);
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.03);
+}
+
+/* Modal */
+/* Estilo para el modal de imagen */
+/* Estilo para el modal de imagen */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #fff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+#img-ampliada {
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.modal-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.modal-controls button {
+  padding: 10px;
+  font-size: 18px;
+  background-color: var(--azul);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-controls button:hover {
+  background-color: #00b4cc;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--gris-oscuro);
+  color: var(--blanco);
+}
+
+footer a.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--gris-oscuro);
+  color: var(--blanco);
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .phrase {
+    font-size: 18px;
+  }
+
+  .thumbnail {
+    max-width: 90%;
+  }
+
+  .modal-content {
+    max-width: 95%;
+    max-height: 80%;
+  }
+
+  .modal-controls {
+    width: 100%;
+    max-width: 200px;
+    justify-content: space-around;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

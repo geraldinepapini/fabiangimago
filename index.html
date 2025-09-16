@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fabian Gi Ilusionista - Magia y Humor</title>
+  <link rel="stylesheet" href="estilos/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // autoplay cada 5 segundos
+    setInterval(nextSlide, 5000);
+  });
+</script>
+
+
+<body>
+
+  <!-- Redes sociales arriba -->
+ <div class="redes-sociales">
+  <a href="https://www.instagram.com/fabiangi.ilusionista/" target="_blank">
+    <img src="imagenes/instagram1.svg" alt="Instagram">
+  <a href="https://www.tiktok.com/@fabiangi_ilusionista/" target="_blank">
+    <img src="imagenes/tiktok.svg" alt="TikTok">
+  </a>
+</div>
+  <!-- Header + Logo -->
+  <header>
+    <img src="imagenes/logo magia con tagline horizontal.png" alt="FabianGi" class="logo">
+  </header>
+
+  <!-- Menú -->
+  <nav>
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="servicio.html">SERVICIOS</a></li>
+      <li><a href="porfolio.html">PORFOLIO</a></li>
+    </ul>
+  </nav>
+
+  <!-- Imagen de portada -->
+  <section class="hero">
+    <img src="imagenes/DSC_0193.jpg" class="hero-img" alt="Imagen principal">
+  </section>
+
+<!-- Quien Soy -->
+  <section class="servicios">
+    <h2>Fabian Gi Mago-Ilusionista</h2>
+
+    <div class="servicio">
+      <img src="imagenes/DSC_0118.jpg" alt="Cursos">
+      <div class="info">
+        <h3>Magia y Humor</h3>
+        <p>Soy Fabian Gómez, conocido artísticamente como Fabián Gi, fusiono magia y humor en constante interacción con el publico, ofreciendo un espectáculo cautivador tanto para adultos como para niños de todas las edades. Mi estilo en el escenario es dinámico y autentico, lo que me permite crear shows versátiles adaptables a cualquier tipo de evento, desde festivales, eventos corporativos, fiestas privadas y celebraciones infantiles. Siempre buscando ofrecer una propuesta atractiva e innovadora para cada ocasión. Con más de diez años de experiencia, he sorprendido y divertido a multitudes de personas de todas las edades, en todos los ámbitos y numerosos escenarios en las provincias del Chaco, Corrientes y Santa Fe.</p>
+        <a href="#" class="btn-vermas">Ver más <i class="fas fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+  </section>  
+  
+  <!-- Banner testimonios -->
+ 
+
+  <section class="testimonios-banner">
+  <h2>Lo que dicen de nuestros cursos</h2>
+  <div class="slider">
+    <button class="prev">&#10094;</button>
+    <div class="slides-wrapper">
+      <div class="slide active">
+        <p> show atrapante para los peques! asi que un 10!!! – Milagros M.</p>
+      </div>
+      <div class="slide">
+        <p> “Excelente show y predisposición! Los chicos quedaron encantados con la magia y los grandes lo disfrutamos mucho,fue un momento acompañado de mucho entusiasmo y risas.¡Gracias por hacer tan especial el cumple de mi hijo!” – Nadia A.</p>
+      </div>
+      <div class="slide">
+        <p>💪 “Great!!” – Daniel R.</p>
+      </div>
+      <div class="slide">
+        <p>💪 “Información muy útil y bien explicado por un experto” – Jacky Z.</p>
+      </div>
+      <div class="slide">
+        <p>💪 “Este curso es una introducción accesible y clara sobre las vitaminas, proporcionando información detallada que es útil para quienes se inician en estudios de dietética. La explicación y la profundidad del contenido ayudan a los estudiantes a formar una base sólida” – Ale F.</p>
+      </div>
+      <div class="slide">
+        <p>💪 “Excelente curso” – Manuela P.</p>
+      </div>
+      <div class="slide">
+        <p>💪 “Descripción del curso acorde a lo visto, muy profesional y ejercicios prácticos para aplicar” – Laura A.</p>
+      </div>
+      <div class="slide">
+        <p>💪 “Curso no muy largo y bien explicado. En él he aprendido las bases de cada una de las vitaminas principales más en profundidad. Yo quiero estudiar dietética el año que viene y esta información me ha venido muy bien.” – Regina A.</p>
+      </div>
+    </div>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+  <!-- Mision y vision -->
+  <section class="nuestro-equipo">
+    <h2>Misión y Visión</h2>
+    <div class="equipo">
+      <div class="miembro">
+        <img src="imagenes/DSC_0189.jpg" alt="Héctor Fabián Gómez">
+        <h3>Misión</h3>
+        <p>Crear experiencias mágicas que mezclen ilusión, humor y emoción, llevando alegría y asombro a públicos de todas las edades, y generar momentos unicos que perduren en la memoria.</p>
+      </div>
+      <div class="miembro">
+        <img src="imagenes/DSC_0135 v2.jpg" alt="FabianGi">
+        <h3>Visión</h3>
+        <p>Convertirme en un referente del ilusionismo en la región, reconocido por su estilo husmoristico y creativo, fomentando la magia como una forma de arte y entretenimiento que conecta y transforma a las personas.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Contacto -->
+<section class="contact-form">
+  <h2>Formulario de Contacto</h2>
+  <form action="https://formspree.io/f/xeozgvpg" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 FabianGi. Todos los derechos reservados.</p>
+    <p>Seguinos en nuestras redes sociales</p>
+    <div class="redes-sociales">
+  <a href="https://www.instagram.com/fabiangi.ilusionista/" target="_blank">
+    <img src="imagenes/instagram1.svg" alt="Instagram">
+  <a href="https://www.tiktok.com/@fabiangi_ilusionista/" target="_blank">
+    <img src="imagenes/tiktok.svg" alt="TikTok">
+  </a>
+</div>
+  </footer>
+
+</body>
+</html>

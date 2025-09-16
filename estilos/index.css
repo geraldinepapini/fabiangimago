@@ -1,0 +1,370 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* ======= RESET ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* ======= COLORES ======= */
+:root {
+  --azul: #0f9cd6; /* tono del Health */
+  --gris: #4a4a4a; /* tono del Domum */
+}
+
+/* ======= REDES SUPERIORES ======= */
+.redes-sociales {
+  display: flex;
+  justify-content: center; /* centrado horizontal */
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+  background: #f8f8f8;
+}
+
+.redes-sociales img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.redes-sociales img:hover {
+  transform: scale(1.2);
+}
+
+
+/* ======= HEADER + LOGO ======= */
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+header .logo {
+  width: 200px;
+  max-width: 80%;
+  height: auto;
+}
+
+/* ======= NAV ======= */
+nav {
+  background: var(--gris);
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 10px 0;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: var(--azul);
+}
+
+/* ======= HERO ======= */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ======= SERVICIOS ======= */
+.servicios {
+  padding: 40px 20px;
+  text-align: center;
+}
+.servicios h2 {
+  font-size: 1.8rem;
+  color: var(--azul);
+  margin-bottom: 30px;
+}
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.servicio img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.servicio h3 {
+  color: var(--gris);
+  margin: 10px 0;
+}
+.btn-vermas {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--azul);
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn-vermas:hover {
+  background: #0c7da8;
+}
+
+/* ======= banner testimonios ======= */
+.testimonios-banner {
+  background: #f1f8f6;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.testimonios-banner h2 {
+  font-size: 1.8rem;
+  color: #0077b6;
+  margin-bottom: 30px;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.slides-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  padding: 20px;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.5;
+  min-height: 100px;
+}
+
+.slide.active {
+  display: block;
+  animation: fade 0.8s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slider button {
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: background 0.3s;
+}
+
+.slider button:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.slider .prev {
+  position: absolute;
+  left: -50px;
+}
+
+.slider .next {
+  position: absolute;
+  right: -50px;
+}
+
+@media (max-width: 600px) {
+  .slider button {
+    font-size: 1.5rem;
+    left: 0;
+    right: 0;
+  }
+  .slider .prev {
+    left: -30px;
+  }
+  .
+}
+
+/* ======= MISION Y VISION ======= */
+.mision-vision {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  flex-wrap: wrap; /* por si es mobile */
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  flex: 1 1 300px; /* mínimo ancho */
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card img {
+  max-width: 80px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  color: #0077
+}
+
+/* ======= NUESTRO EQUIPO ======= */
+.nuestro-equipo {
+  padding: 40px 20px;
+  background: #fafafa;
+  text-align: center;
+}
+.nuestro-equipo h2 {
+  color: var(--azul);
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+.equipo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.miembro {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.miembro img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.miembro h3 {
+  color: var(--gris);
+  margin-bottom: 10px;
+}
+
+/* Formulario de contacto */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.contact-form button {
+  background-color: #00CEE3;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background-color: #00b5cc;
+}
+
+/* ======= FOOTER ======= */
+footer {
+  background: var(--gris);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+footer p {
+  margin: 5px 0;
+}
+footer a {
+  display: inline-block;
+  margin: 0 8px;
+}
+footer img {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+footer img:hover {
+  transform: scale(1.2);
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .vision-mision {
+    flex-direction: column;
+    align-items: center;
+  }
+  .equipo {
+    flex-direction: column;
+  }
+}
