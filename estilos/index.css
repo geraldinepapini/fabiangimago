@@ -1,8 +1,7 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@600;700&display=swap');
 
-
-/* ======= RESET ======= */
+/* ---------- Reset ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -10,88 +9,92 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  background: #fff;
-  line-height: 1.6;
-}
-
-/* ======= COLORES ======= */
+/* Colores base */
 :root {
-  --azul: #0f9cd6; /* tono del Health */
-  --gris: #4a4a4a; /* tono del Domum */
+  --primary: #e50914; /* Rojo */
+  --secondary: #ffffff; /* Blanco */
+  --light-bg: #111111; /* Negro */
+  --text-dark: #ffffff; /* Texto blanco */
 }
 
-/* ======= REDES SUPERIORES ======= */
+/* Fondo general */
+body {
+  background: var(--light-bg);
+  color: var(--text-dark);
+}
+
+/* Redes sociales */
 .redes-sociales {
   display: flex;
-  justify-content: center; /* centrado horizontal */
-  align-items: center;
+  justify-content: center;
   gap: 15px;
-  padding: 10px 0;
-  background: #f8f8f8;
+  padding: 8px 0;
+  background: #000; /* Fondo negro */
 }
-
 .redes-sociales img {
   width: 28px;
   height: 28px;
-  display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
-
 .redes-sociales img:hover {
   transform: scale(1.2);
 }
 
-
-/* ======= HEADER + LOGO ======= */
+/* Logo y header */
 header {
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
+  background: #fff; /* Fondo blanco */
 }
-header .logo {
-  width: 200px;
-  max-width: 80%;
+.logo {
+  max-width: 180px;
   height: auto;
 }
 
-/* ======= NAV ======= */
+/* Menú */
 nav {
-  background: var(--gris);
+  background: var(--primary);
 }
 nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
+  gap: 25px;
+  padding: 14px 0;
   flex-wrap: wrap;
-  list-style: none;
-  padding: 10px 0;
-}
-nav ul li {
-  margin: 0 15px;
 }
 nav ul li a {
   text-decoration: none;
   color: #fff;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: color 0.3s;
 }
 nav ul li a:hover {
-  color: var(--azul);
+  color: var(--secondary);
 }
 
-/* ======= HERO ======= */
+/* Hero */
 .hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 .hero-img {
   width: 100%;
-  max-height: 400px;
+  height: 320px;
   object-fit: cover;
-  display: block;
+  border-bottom: 4px solid var(--primary);
+}
+
+/* Frase */
+.phrase {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 30px 15px;
+  color: var(--secondary);
+  font-weight: 500;
 }
 
 /* ======= SERVICIOS ======= */
@@ -100,8 +103,8 @@ nav ul li a:hover {
   text-align: center;
 }
 .servicios h2 {
-  font-size: 1.8rem;
-  color: var(--azul);
+  font-size: 1.6rem;
+  color: var(--primary);
   margin-bottom: 30px;
 }
 .servicio {
@@ -117,14 +120,14 @@ nav ul li a:hover {
   margin-bottom: 15px;
 }
 .servicio h3 {
-  color: var(--gris);
+  color: var(--secondary);
   margin: 10px 0;
 }
 .btn-vermas {
   display: inline-block;
   margin-top: 10px;
-  background: var(--azul);
-  color: #fff;
+  background: var(--primary);
+  color: #ffffff;
   padding: 8px 15px;
   border-radius: 20px;
   text-decoration: none;
@@ -137,7 +140,7 @@ nav ul li a:hover {
 
 /* ======= banner testimonios ======= */
 .testimonios-banner {
-  background: #f1f8f6;
+  background: #ffffff;
   padding: 40px 20px;
   text-align: center;
   position: relative;
@@ -145,7 +148,7 @@ nav ul li a:hover {
 
 .testimonios-banner h2 {
   font-size: 1.8rem;
-  color: #0077b6;
+  color: #fa0404;
   margin-bottom: 30px;
 }
 
@@ -258,11 +261,11 @@ nav ul li a:hover {
 /* ======= NUESTRO EQUIPO ======= */
 .nuestro-equipo {
   padding: 40px 20px;
-  background: #fafafa;
+  background: #000000;
   text-align: center;
 }
 .nuestro-equipo h2 {
-  color: var(--azul);
+  color: var(--primary);
   font-size: 1.8rem;
   margin-bottom: 30px;
 }
@@ -273,7 +276,7 @@ nav ul li a:hover {
   gap: 30px;
 }
 .miembro {
-  background: #fff;
+  background: #000000;
   padding: 20px;
   border-radius: 10px;
   max-width: 400px;
@@ -316,7 +319,7 @@ nav ul li a:hover {
   font-size: 16px;
 }
 .contact-form button {
-  background-color: #00CEE3;
+  background-color: #fd0404;
   color: white;
   font-size: 16px;
   border: none;

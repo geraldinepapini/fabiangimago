@@ -1,5 +1,5 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@600;700&display=swap');
 
 /* ---------- Reset ---------- */
 * {
@@ -11,10 +11,16 @@
 
 /* Colores base */
 :root {
-  --primary: #0077b6;
-  --secondary: #00b4d8;
-  --light-bg: #f8f9fa;
-  --text-dark: #333;
+  --primary: #e50914; /* Rojo */
+  --secondary: #ffffff; /* Blanco */
+  --light-bg: #111111; /* Negro */
+  --text-dark: #ffffff; /* Texto blanco */
+}
+
+/* Fondo general */
+body {
+  background: var(--light-bg);
+  color: var(--text-dark);
 }
 
 /* Redes sociales */
@@ -23,9 +29,8 @@
   justify-content: center;
   gap: 15px;
   padding: 8px 0;
-  background: var(--light-bg);
+  background: #000; /* Fondo negro */
 }
-
 .redes-sociales img {
   width: 28px;
   height: 28px;
@@ -35,10 +40,11 @@
   transform: scale(1.2);
 }
 
-/* Logo */
+/* Logo y header */
 header {
   text-align: center;
   padding: 10px 0;
+  background: #fff; /* Fondo blanco */
 }
 .logo {
   max-width: 180px;
@@ -53,15 +59,17 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 12px 0;
+  gap: 25px;
+  padding: 14px 0;
   flex-wrap: wrap;
 }
 nav ul li a {
   text-decoration: none;
   color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
   transition: color 0.3s;
 }
 nav ul li a:hover {
@@ -77,29 +85,30 @@ nav ul li a:hover {
   width: 100%;
   height: 320px;
   object-fit: cover;
-  border-bottom: 4px solid var(--secondary);
+  border-bottom: 4px solid var(--primary);
 }
 
 /* Frase */
 .phrase {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin: 30px 15px;
-  color: var(--text-dark);
+  color: var(--secondary);
   font-weight: 500;
 }
 
 /* Cursos */
 .cursos {
-  background: #fff;
+  background: #000;
   padding: 40px 20px;
 }
 .cursos h2 {
   text-align: center;
   color: var(--primary);
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 30px;
   font-weight: 700;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* Grid */
@@ -113,10 +122,10 @@ nav ul li a:hover {
 
 /* Tarjeta de curso */
 .curso {
-  background: #ffffff;
+  background: #1a1a1a;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(255,0,0,0.2);
   display: flex;
   flex-direction: column;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -129,23 +138,41 @@ nav ul li a:hover {
 
 .curso:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 18px rgba(229,9,20,0.4);
 }
 
+/* Imagen de la tarjeta */
+.curso img {
+  width: 100%;
+  height: 280px; /* Fuerza misma altura */
+  object-fit: cover; /* Recorta sin deformar */
+  border-radius: 8px;
+  display: block;
+}
+
+/* Para asegurar que todas ocupen lo mismo */
+.curso .img-container {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+/* Títulos y texto */
 .curso h3 {
-  font-size: 1rem;
-  color: var(--primary);
+  font-size: 1.3rem;
+  color: var(--secondary);
   padding: 15px;
-  min-height: 60px;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
 }
 
 .curso p {
   flex-grow: 1;
-  font-size: 0.9rem;
-  color: var(--text-dark);
+  font-size: 1rem;
+  color: var(--secondary);
   padding: 0 15px 15px 15px;
-  line-height: 1.4em;
+  line-height: 1.6em;
 }
 
 /* Botón */
@@ -160,21 +187,118 @@ nav ul li a:hover {
   font-weight: 600;
   border-radius: 6px;
   transition: all 0.3s ease;
-  font-size: 0.95rem;
+  font-size: 2rem;
   letter-spacing: 0.5px;
 }
 .btn-curso:hover {
-  background: var(--secondary);
+  background: #b6060f;
   transform: scale(1.02);
 }
+/* Sección Valores */
+.valores {
+  background-color: #111; 
+  padding: 50px 20px;
+  color: #fff;
+}
+
+.valores h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #e50914; 
+  text-shadow: 0 0 10px #e50914, 0 0 20px #e50914; /* efecto resplandor */
+}
+
+/* Grid de valores */
+.grid-valores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cada valor */
+.valor {
+  background-color: #1a1a1a;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(229,9,20,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valor:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(229,9,20,0.5);
+}
+
+.valor h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Emoji / icono con animación */
+.icono {
+  font-size: 2rem; /* más grande */
+  display: inline-block;
+  animation: brillo 2s infinite alternate;
+}
+
+.valor:hover .icono {
+  animation: brillo-hover 1.5s infinite alternate;
+}
+
+/* Animaciones */
+@keyframes brillo {
+  0% { text-shadow: 0 0 5px #fff; }
+  50% { text-shadow: 0 0 10px #e50914, 0 0 15px #fff; }
+  100% { text-shadow: 0 0 5px #fff; }
+}
+
+@keyframes brillo-hover {
+  0% { text-shadow: 0 0 10px #fff, 0 0 15px #e50914; }
+  50% { text-shadow: 0 0 20px #fff, 0 0 25px #e50914; }
+  100% { text-shadow: 0 0 10px #fff, 0 0 15px #e50914; }
+}
+
+.valor p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .valores h2 {
+    font-size: 2rem;
+  }
+  .valor h3 {
+    font-size: 1.3rem;
+  }
+  .icono {
+    font-size: 1.6rem;
+  }
+  .valor p {
+    font-size: 1rem;
+  }
+}
+
 
 /* Footer */
 footer {
-  background: var(--light-bg);
+  background: #000;
   padding: 20px 10px;
   text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-dark);
+  font-size: 0.95rem;
+  color: var(--secondary);
   margin-top: 40px;
 }
 footer p {
@@ -195,9 +319,12 @@ footer .redes-sociales {
 /* Responsive */
 @media (max-width: 600px) {
   .phrase {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   .curso h3 {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+  }
+  nav ul li a {
+    font-size: 1rem;
   }
 }
