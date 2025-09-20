@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fabian Gi Ilusionista - Magia y Humor</title>
+  <link rel="stylesheet" href="estilos/mihistoria.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // autoplay cada 5 segundos
+    setInterval(nextSlide, 5000);
+  });
+</script>
+
+
+<body>
+
+  <!-- Redes sociales arriba -->
+ <div class="redes-sociales">
+  <a href="https://www.instagram.com/fabiangi.ilusionista/" target="_blank">
+    <img src="imagenes/instagram1.svg" alt="Instagram">
+  <a href="https://www.tiktok.com/@fabiangi_ilusionista/" target="_blank">
+    <img src="imagenes/tiktok.svg" alt="TikTok">
+  </a>
+</div>
+  <!-- Header + Logo -->
+  <header>
+    <img src="imagenes/logo magia con tagline horizontal.png" alt="FabianGi" class="logo">
+  </header>
+
+  <!-- Menú -->
+  <nav>
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="servicio.html">SERVICIOS</a></li>
+      <li><a href="porfolio.html">PORFOLIO</a></li>
+    </ul>
+  </nav>
+
+  <!-- Imagen de portada -->
+  <section class="hero">
+    <img src="imagenes/DSC_0193.jpg" class="hero-img" alt="Imagen principal">
+  </section>
+
+<section class="historia">
+  <div class="historia-contenido">
+
+    <!-- Columna fotos -->
+    <div class="historia-fotos">
+      <img src="imagenes/WhatsApp Image 2025-09-18 at 17.44.16.jpeg" alt="Historia 1">
+      <img src="imagenes/503647512_4067094666951777_7747382171919412759_n.jpg" alt="Historia 2">
+      <img src="imagenes/14955843_723753204442569_7336011012590552692_n.jpg" alt="Historia 3">
+      <img src="imagenes/shopp1.png" alt="Historia 4">
+    </div>
+
+    <!-- Columna texto -->
+    <div class="historia-texto">
+      <h2>La Historia de Fabián Gi</h2>
+      <p>
+        Desde pequeño, Fabián descubrió que la magia no solo está en los trucos,
+        sino en la capacidad de sorprender, emocionar y conectar con las personas.
+        Con los años, transformó esa pasión en un estilo propio: cercano, elegante
+        y siempre cargado de humor. 
+      </p>
+      <p>
+        Su recorrido lo llevó a presentarse en eventos privados, teatros y escenarios
+        donde cada show se convirtió en una experiencia inolvidable. Hoy, Fabián Gi
+        combina creatividad, profesionalismo y un toque único para hacer de cada
+        presentación un recuerdo mágico para toda la vida. 
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 FabianGi. Todos los derechos reservados.</p>
+    <p>Seguinos en nuestras redes sociales</p>
+    <div class="redes-sociales">
+  <a href="https://www.instagram.com/fabiangi.ilusionista/" target="_blank">
+    <img src="imagenes/instagram1.svg" alt="Instagram">
+  <a href="https://www.tiktok.com/@fabiangi_ilusionista/" target="_blank">
+    <img src="imagenes/tiktok.svg" alt="TikTok">
+  </a>
+</div>
+  </footer>
+
+</body>
+</html>

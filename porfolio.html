@@ -1,415 +1,273 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porfolio</title>
-    <link rel="stylesheet" href="estilos/porfolio.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fabian Gi Ilusionista - Magia y Humor</title>
+  <link rel="stylesheet" href="estilos/porfolio.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Lightbox2 CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
 </head>
+
+
 <script>
-  const thumbnails = document.querySelectorAll('.thumbnail');
-  const modal = document.querySelector('.modal');
-  const modalImg = document.getElementById('modal-img');
-  const closeBtn = document.querySelector('.close');
-  const prevBtn = document.getElementById('prev');
-  const nextBtn = document.getElementById('next');
+  document.addEventListener('DOMContentLoaded', function() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
 
-  let currentIndex = 0;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
 
-  function showModal(index) {
-    currentIndex = index;
-    modal.style.display = 'flex';
-    modalImg.src = thumbnails[currentIndex].src;
-  }
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
 
-  thumbnails.forEach((thumb, index) => {
-    thumb.addEventListener('click', () => showModal(index));
-  });
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
 
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-    modalImg.src = thumbnails[currentIndex].src;
-  });
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % thumbnails.length;
-    modalImg.src = thumbnails[currentIndex].src;
+    // autoplay cada 5 segundos
+    setInterval(nextSlide, 5000);
   });
 </script>
 
+
 <body>
 
- <header class="main-header">
-  <div class="logo-container">
-    <img src="GENERALES/logo DOMUM - Color Vertical  [Con Tagline].png" alt="Domum Logo" class="logo-img">
-  </div>
-  <nav class="main-nav">
-    <a href="index.html">INICIO</a>
-    <a href="nosotros.html">NOSOTROS</a>
-    <a href="casas.html">CASAS</a>
-    <a href="locales.html">LOCALES</a>
-    <a href="porfolio.html">PORFOLIO</a>
-    <a href="blog.html">BLOG</a>
+  <!-- Redes sociales arriba -->
+ <div class="redes-sociales">
+  <a href="https://www.instagram.com/fabiangi.ilusionista/" target="_blank">
+    <img src="imagenes/instagram1.svg" alt="Instagram">
+  <a href="https://www.tiktok.com/@fabiangi_ilusionista/" target="_blank">
+    <img src="imagenes/tiktok.svg" alt="TikTok">
+  </a>
+</div>
+  <!-- Header + Logo -->
+  <header>
+    <img src="imagenes/logo magia con tagline horizontal.png" alt="FabianGi" class="logo">
+  </header>
+
+  <!-- Menú -->
+  <nav>
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="servicio.html">SERVICIOS</a></li>
+      <li><a href="porfolio.html">PORFOLIO</a></li>
+    </ul>
   </nav>
- </header>
 
-  <main>
-    <section class="galeria">
-      <div class="work">
-        <div class="images">
-          <a href="img/casa 60m2 FB/IMG-20220408-WA0005.jpg" data-lightbox="Diseño fb1" data-title="Diseño fb1" onclick="abrirImagen(this.src)">
-            <img src="img/casa 60m2 FB/IMG-20220408-WA0005.jpg" alt="Diseño fb1" class="thumbnail">
-          </a>
-          <a href="img/casa 60m2 FB/IMG-20220408-WA0006.jpg" data-lightbox="Diseño fb1" data-title="Diseño fb1" onclick="abrirImagen(this.src)">
-            <img src="img/casa 60m2 FB/IMG-20220408-WA0006.jpg" alt="Diseño fb1" class="thumbnail">
-          </a>
-          <a href="img/casa 60m2 FB/IMG-20221103-WA0052.jpg" data-lightbox="Diseño fb1" data-title="Diseño fb1" onclick="abrirImagen(this.src)">
-            <img src="img/casa 60m2 FB/IMG-20221103-WA0052.jpg" alt="Diseño fb1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>CASA DE 60M2 FB: </h2>
-         <p>Se diseño por completo con un diseño clasico, sus planos y construcción</p>
-        </div>
-      </div>
+  <!-- Imagen de portada -->
+  <section class="hero">
+    <img src="imagenes/DSC_0193.jpg" class="hero-img" alt="Imagen principal">
+  </section>
+
+ <section class="portfolio">
+  <h2>PORTFOLIO MAGICO</h2>
+  
+  <div class="grid-portfolio">
+
+    <!-- Columna 1 -->
+    <div class="columna">
+      <h3>MAGIA DE CERCA</h3>
 
       <div class="work">
         <div class="images">
-          <a href="img/casa 110m2 RT/Imagen15.png" data-lightbox="Diseño rt1" data-title="Diseño rt1" onclick="abrirImagen(this.src)">
-            <img src="img/casa 110m2 RT/Imagen15.png" alt="Diseño rt1" class="thumbnail">
+          <a href="imagenes/magia de cerca/20241122_200810.jpg" data-lightbox="expoifap" data-title="Diseño fb1">
+            <img src="imagenes/magia de cerca/20241122_200810.jpg" alt="expoifap" class="thumbnail">
           </a>
-          <a href="img/casa 110m2 RT/Imagen16.png" data-lightbox="Diseño rt1" data-title="Diseño rt1" onclick="abrirImagen(this.src)">
-            <img src="img/casa 110m2 RT/Imagen16.png" alt="Diseño rt1" class="thumbnail">
+          <a href="imagenes/magia de cerca/20241122_195145.jpg" data-lightbox="expoifap" data-title="Diseño fb1">
+            <img src="imagenes/magia de cerca/20241122_195145.jpg" alt="expoifap" class="thumbnail">
           </a>
-          <a href="img/casa 110m2 RT/rtfachada.png" data-lightbox="Diseño rt1" data-title="Diseño rt1" onclick="abrirImagen(this.src)">
-            <img src="img/casa 110m2 RT/rtfachada.png" alt="Diseño rt1" class="thumbnail">
+          <a href="imagenes/magia de cerca/20241122_193707.jpg" data-lightbox="expoifap" data-title="Diseño fb1">
+            <img src="imagenes/magia de cerca/20241122_193707.jpg" alt="expoifap" class="thumbnail">
           </a>
         </div>
         <div class="description">
-         <h2>CASA DE 110M2 RT: </h2>
-         <p>Se diseño por completo con un diseño moderno</p>
+          <h4>Evento Expo IFAP, Resistencia</h4>
         </div>
       </div>
+      <div class="work">
+        <div class="images">
+          <a href="imagenes/magia de cerca/20241103_192224.jpg" data-lightbox="fundacionlibera" data-title="Diseño fb1">
+            <img src="imagenes/magia de cerca/20241103_192224.jpg" alt="fundacionlibera" class="thumbnail">
+          </a>
+          <a href="imagenes/magia de cerca/IMG-20241104-WA0009.jpg" data-lightbox="fundacionlibera" data-title="Diseño fb1">
+            <img src="imagenes/magia de cerca/IMG-20241104-WA0009.jpg" alt="fundacionlibera" class="thumbnail">
+          </a>
+          <a href="imagenes/magia de cerca/IMG-20241104-WA0018.jpg" data-lightbox="fundacionlibera" data-title="Diseño fb1">
+            <img src="imagenes/magia de cerca/IMG-20241104-WA0018.jpg" alt="fundacionlibera" class="thumbnail">
+          </a>
+        </div>
+        <div class="description">
+          <h4>Evento Solidario Fundación Libera Chaco</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna 2 -->
+    <div class="columna">
+      <h3>MAGIA DE SALON</h3>
 
       <div class="work">
         <div class="images">
-          <a href="img/casa 80m2 LB/fachada 1.jpg" data-lightbox="Diseño LB1" data-title="Diseño LB1">
-            <img src="img/casa 80m2 LB/fachada 1.jpg" alt="Diseño LB1" class="thumbnail">
+          <a href="imagenes/magia salon/IMG-20250602-WA0026.jpg" data-lightbox="magia colegio don bosco" data-title="Diseño rt1">
+            <img src="imagenes/magia salon/IMG-20250602-WA0026.jpg" alt="magia colegio don bosco" class="thumbnail">
           </a>
-          <a href="img/casa 80m2 LB/Imagen44.png" data-lightbox="Diseño LB1" data-title="Diseño LB1">
-            <img src="img/casa 80m2 LB/Imagen44.png" alt="Diseño LB1" class="thumbnail">
+          <a href="imagenes/magia salon/IMG-20250602-WA0027.jpg" data-lightbox="magia colegio don bosco" data-title="Diseño rt1">
+            <img src="imagenes/magia salon/IMG-20250602-WA0027.jpg" alt="magia colegio don bosco" class="thumbnail">
           </a>
-          <a href="img/casa 80m2 LB/IMG-20220507-WA0038.jpg" data-lightbox="Diseño LB1" data-title="Diseño LB1">
-            <img src="img/casa 80m2 LB/IMG-20220507-WA0038.jpg" alt="Diseño LB1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>CASA DE 80M2 LB: </h2>
-         <p>Se diseño por completo con un diseño moderno, sus planos y construcción</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/casa 80m2 CT/Imagen1_001.png" data-lightbox="Diseño ct1" data-title="Diseño ct1">
-            <img src="img/casa 80m2 CT/Imagen1_001.png" alt="Diseño ct1" class="thumbnail">
-          </a>
-          <a href="img/casa 80m2 CT/Imagen11.png" data-lightbox="Diseño ct1" data-title="Diseño ct1">
-            <img src="img/casa 80m2 CT/Imagen11.png" alt="Diseño ct1" class="thumbnail">
-          </a>
-          <a href="img/casa 80m2 CT/Imagen16.png" data-lightbox="Diseño ct1" data-title="Diseño ct1">
-            <img src="img/casa 80m2 CT/Imagen16.png" alt="Diseño ct1" class="thumbnail">
+          <a href="imagenes/magia salon/IMG-20250602-WA0033.jpg" data-lightbox="magia colegio don bosco" data-title="Diseño rt1">
+            <img src="imagenes/magia salon/IMG-20250602-WA0033.jpg" alt="magia colegio don bosco" class="thumbnail">
           </a>
         </div>
         <div class="description">
-         <h2>CASA DE 80M2 LB: </h2>
-         <p>Se diseño por completo con un diseño moderno, sus planos y construcción</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/casa 170m2 GA/Imagen3.png" data-lightbox="Diseño ga1" data-title="Diseño ga1">
-            <img src="img/casa 170m2 GA/Imagen3.png" alt="Diseño ga1" class="thumbnail">
-          </a>
-          <a href="img/casa 170m2 GA/Imagen15.png" data-lightbox="Diseño ga1" data-title="Diseño ga1">
-            <img src="img/casa 170m2 GA/Imagen15.png" alt="Diseño ga1" class="thumbnail">
-          </a>
-          <a href="img/casa 170m2 GA/Imagen21.png" data-lightbox="Diseño ga1" data-title="Diseño ga1">
-            <img src="img/casa 170m2 GA/Imagen21.png" alt="Diseño ga1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>CASA DE 170M2 GA: </h2>
-         <p>Se diseño por completo con un diseño moderno</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/fachada casa 75m2 NG/Imagen11.png" data-lightbox="Fachada NG1" data-title="Fachada NG1">
-            <img src="img/fachada casa 75m2 NG/Imagen11.png" alt="Fachada NG1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 75m2 NG/Imagen21.png" data-lightbox="Fachada NG1" data-title="Fachada NG1">
-            <img src="img/fachada casa 75m2 NG/Imagen21.png" alt="Fachada NG1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 75m2 NG/Imagen23.png" data-lightbox="Fachada NG1" data-title="Fachada NG1">
-            <img src="img/fachada casa 75m2 NG/Imagen23.png" alt="Fachada NG1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>CASA DE 170M2 GA: </h2>
-         <p>Se diseño por completo con un diseño moderno</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/fachada casa 80 m2 FT/Imagen1_000.jpg" data-lightbox="Fachada ft1" data-title="Fachada ft1">
-            <img src="img/fachada casa 80 m2 FT/Imagen1_000.jpg" alt="Fachada ft1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 80 m2 FT/Imagen1.jpg" data-lightbox="Fachada ft1" data-title="Fachada ft1">
-            <img src="img/fachada casa 80 m2 FT/Imagen1.jpg" alt="Fachada ft1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 80 m2 FT/WhatsApp Image 2024-07-08 at 17.41.32.jpeg" data-lightbox="Fachada ft1" data-title="Fachada ft1">
-            <img src="img/fachada casa 80 m2 FT/WhatsApp Image 2024-07-08 at 17.41.32.jpeg" alt="Fachada ft1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>FACHADA CASA 80M2 FT: </h2>
-         <p>Se rediseño una fachada angosta con un diseño moderno</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/fachada casa 80m2 GM/GMWEB.jpg" data-lightbox="Fachada gm1" data-title="Fachada gm1">
-            <img src="img/fachada casa 80m2 GM/GMWEB.jpg" alt="Fachada gm1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 80m2 GM/Imagen1.png" data-lightbox="Fachada gm1" data-title="Fachada gm1">
-            <img src="img/fachada casa 80m2 GM/Imagen1.png" alt="Fachada gm1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 80m2 GM/Imagen2_000.png" data-lightbox="Fachada gm1" data-title="Fachada gm1">
-            <img src="img/fachada casa 80m2 GM/Imagen2_000.png" alt="Fachada gm1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>FACHADA CASA 80M2 GM: </h2>
-         <p>Se rediseño una fachada con un diseño clasico y se realizo redistribución de ambientes</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/fachada casa 80m2 NG/Imagen1_001.png" data-lightbox="Fachada ng1" data-title="Fachada ng1">
-            <img src="img/fachada casa 80m2 NG/Imagen1_001.png" alt="Fachada ng1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 80m2 NG/Imagen3.png" data-lightbox="Fachada ng1" data-title="Fachada ng1">
-            <img src="img/fachada casa 80m2 NG/Imagen3.png" alt="Fachada ng1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 80m2 NG/Imagen2.png" data-lightbox="Fachada ng1" data-title="Fachada ng1">
-            <img src="img/fachada casa 80m2 NG/Imagen2.png" alt="Fachada ng1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>FACHADA CASA 80M2 NG: </h2>
-         <p>Se rediseño una fachada con un diseño moderno y se realizo redistribución de ambientes</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/fachada casa 120m2 CN/Imagen1_004.png" data-lightbox="Fachada cn1" data-title="Fachada cn1">
-            <img src="img/fachada casa 120m2 CN/Imagen1_004.png" alt="Fachada cn1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 120m2 CN/Imagen3.png" data-lightbox="Fachada cn1" data-title="Fachada cn1">
-            <img src="img/fachada casa 120m2 CN/Imagen3.png" alt="Fachada cn1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 120m2 CN/Imagen4.png" data-lightbox="Fachada cn1" data-title="Fachada cn1">
-            <img src="img/fachada casa 120m2 CN/Imagen4.png" alt="Fachada cn1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>FACHADA CASA 120M2 CN: </h2>
-         <p>Se rediseño una fachada con un diseño moderno y ampliación de garage</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/fachada casa 220m2 LT/Imagen2.png" data-lightbox="Fachada lt1" data-title="Fachada lt1">
-            <img src="img/fachada casa 220m2 LT/Imagen2.png" alt="Fachada lt1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 120m2 CN/Imagen3.png" data-lightbox="Fachada lt1" data-title="Fachada lt1">
-            <img src="img/fachada casa 120m2 CN/Imagen3.png" alt="Fachada lt1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 120m2 CN/Imagen4.png" data-lightbox="Fachada lt1" data-title="Fachada lt1">
-            <img src="img/fachada casa 120m2 CN/Imagen4.png" alt="Fachada lt1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>FACHADA CASA 220M2 LT: </h2>
-         <p>Se rediseño una fachada con un diseño moderno</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/fachada casa 240m2 NR/Imagen13.jpg" data-lightbox="Fachada nr1" data-title="Fachada nr1">
-            <img src="img/fachada casa 240m2 NR/Imagen13.jpg" alt="Fachada nr1" class="thumbnail" >
-          </a>
-          <a href="img/fachada casa 240m2 NR/Imagen34.jpg" data-lightbox="Fachada nr1" data-title="Fachada nr1">
-            <img src="img/fachada casa 240m2 NR/Imagen34.jpg" alt="Fachada nr1" class="thumbnail">
-          </a>
-          <a href="img/fachada casa 240m2 NR/WhatsApp Image 2024-03-23 at 14.01.00 (1).jpeg" data-lightbox="Fachada nr1" data-title="Fachada nr1">
-            <img src="img/fachada casa 240m2 NR/WhatsApp Image 2024-03-23 at 14.01.00 (1).jpeg" alt="Fachada nr1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>FACHADA CASA 240M2 NR: </h2>
-         <p>Se rediseño una fachada con un diseño moderno</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/interiores casa 80 m2 FP/Image1.jpg" data-lightbox="Fachada fp1" data-title="Fachada fp1">
-            <img src="img/interiores casa 80 m2 FP/Image1.jpg" alt="Fachada fp1" class="thumbnail" >
-          </a>
-          <a href="img/interiores casa 80 m2 FP/Image5.jpg" data-lightbox="Fachada fp1" data-title="Fachada fp1">
-            <img src="img/interiores casa 80 m2 FP/Image5.jpg" alt="Fachada fp1" class="thumbnail">
-          </a>
-          <a href="img/interiores casa 80 m2 FP/Image17.jpg" data-lightbox="Fachada fp1" data-title="Fachada fp1">
-            <img src="img/interiores casa 80 m2 FP/Image17.jpg" alt="Fachada fp1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>DISEÑO INTERIORES CASA 80M2 FP: </h2>
-         <p>Se diseñó el interior con un estilo industrial</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/local electricidad SM/20221004_115500.jpg" data-lightbox="local sm1" data-title="local sm1">
-            <img src="img/local electricidad SM/20221004_115500.jpg" alt="local sm1" class="thumbnail" >
-          </a>
-          <a href="img/local electricidad SM/fachada editada.jpg" data-lightbox="local sm1" data-title="local sm1">
-            <img src="img/local electricidad SM/fachada editada.jpg" alt="local sm1" class="thumbnail">
-          </a>
-          <a href="img/local electricidad SM/Imagen30.png" data-lightbox="local sm1" data-title="local sm1">
-            <img src="img/local electricidad SM/Imagen30.png" alt="local sm1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>DISEÑO LOCAL ELECTRICIDAD SM: </h2>
-         <p>Se diseñó completo con un estilo industrial</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/local indumentaria VI/20230304_093625.jpg" data-lightbox="local vi1" data-title="local vi1">
-            <img src="img/local indumentaria VI/20230304_093625.jpg" alt="local vi1" class="thumbnail" >
-          </a>
-          <a href="img/local indumentaria VI/Imagen71.png" data-lightbox="local vi1" data-title="local vi1">
-            <img src="img/local indumentaria VI/Imagen71.png" alt="local vi1" class="thumbnail">
-          </a>
-          <a href="img/local indumentaria VI/Imagen79.png" data-lightbox="local vi1" data-title="local vi1">
-            <img src="img/local indumentaria VI/Imagen79.png" alt="local vi1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>DISEÑO LOCAL INDUMENDARIA VI: </h2>
-         <p>Se diseñó completo con un estilo moderno</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/local instituto RC/libreriarp.jpg" data-lightbox="local IRC1" data-title="local IRC1">
-            <img src="img/local instituto RC/libreriarp.jpg" alt="local IRC1" class="thumbnail" >
-          </a>
-          <a href="img/local instituto RC/vista2.jpg" data-lightbox="local IRC1" data-title="local IRC1">
-            <img src="img/local instituto RC/vista2.jpg" alt="local IRC1" class="thumbnail">
-          </a>
-          <a href="img/local instituto RC/WhatsApp Image 2023-03-15 at 09.06.02 (2).jpeg" data-lightbox="local IRC1" data-title="local IRC1">
-            <img src="img/local instituto RC/WhatsApp Image 2023-03-15 at 09.06.02 (2).jpeg" alt="local IRC1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>DISEÑO LOCAL INSTITUTO RC: </h2>
-         <p>Se diseñó completo con un estilo moderno</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/local libreria RC/fachada 1.jpg" data-lightbox="local RC1" data-title="local RC1">
-            <img src="img/local libreria RC/fachada 1.jpg" alt="local RC1" class="thumbnail" >
-          </a>
-          <a href="img/local libreria RC/interior 1.jpg" data-lightbox="local RC1" data-title="local RC1">
-            <img src="img/local libreria RC/interior 1.jpg" alt="local RC1" class="thumbnail">
-          </a>
-          <a href="img/local libreria RC/WhatsApp Image 2021-12-22 at 18.49.47.jpeg" data-lightbox="local RC1" data-title="local RC1">
-            <img src="img/local libreria RC/WhatsApp Image 2021-12-22 at 18.49.47.jpeg" alt="local RC1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>DISEÑO LOCAL LIBRERIA RC: </h2>
-         <p>Se diseñó completo con un estilo moderno</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/local panaderia DO/Image8.jpg" data-lightbox="local PO1" data-title="local PO1">
-            <img src="img/local panaderia DO/Image8.jpg" alt="local PO1" class="thumbnail" >
-          </a>
-          <a href="img/local panaderia DO/Imagen5.jpg" data-lightbox="local PO1" data-title="local PO1">
-            <img src="img/local panaderia DO/Imagen5.jpg" alt="local PO1" class="thumbnail">
-          </a>
-          <a href="img/local panaderia DO/IMG_20240305_091824441_HDR - Panaderia Las Medialunas de Omar.jpg" data-lightbox="local PO1" data-title="local PO1">
-            <img src="img/local panaderia DO/IMG_20240305_091824441_HDR - Panaderia Las Medialunas de Omar.jpg" alt="local PO1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>DISEÑO LOCAL PANADERIA MO: </h2>
-         <p>Se diseñó completo con un estilo moderno</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/local peluqueria ST/Imagen46.png" data-lightbox="local ST1" data-title="local ST1">
-            <img src="img/local peluqueria ST/Imagen46.png" alt="local ST1" class="thumbnail" >
-          </a>
-          <a href="img/local peluqueria ST/IMG_20210701_155114_327.jpg" data-lightbox="local ST1" data-title="local ST1">
-            <img src="img/local peluqueria ST/IMG_20210701_155114_327.jpg" alt="local ST1" class="thumbnail">
-          </a>
-          <a href="img/local peluqueria ST/zona de trabajo humedo1.png" data-lightbox="local ST1" data-title="local ST1">
-            <img src="img/local peluqueria ST/zona de trabajo humedo1.png" alt="local ST1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>DISEÑO LOCAL PELUQUERIA ST: </h2>
-         <p>Se diseñó completo con un estilo moderno</p>
-        </div>
-
-        <div class="work">
-        <div class="images">
-          <a href="img/local quincho JR/Image3.png" data-lightbox="local JR1" data-title="local JR1">
-            <img src="img/local quincho JR/Image3.png" alt="local JR1" class="thumbnail" >
-          </a>
-          <a href="img/local quincho JR/Image4.png" data-lightbox="local JR1" data-title="local JR1">
-            <img src="img/local quincho JR/Image4.png" alt="local JR1" class="thumbnail">
-          </a>
-          <a href="img/local quincho JR/Imagen1.png" data-lightbox="local JR1" data-title="local JR1">
-            <img src="img/local quincho JR/Imagen1.png" alt="local JR1" class="thumbnail">
-          </a>
-        </div>
-        <div class="description">
-         <h2>DISEÑO LOCAL QUINCHO JR: </h2>
-         <p>Se diseñó completo con un estilo moderno</p>
+          <h4>Colegio Don Bosco de la Ciudad de Resistencia</h4>
         </div>
       </div>
+    </div>
+ 
 
-      <!-- Puedes copiar y pegar más bloques como este para más proyectos -->
+    <!-- Columna 3 -->
+    <div class="columna">
+      <h3>MAGIA INFANTIL</h3>
 
-    </section>
-  </main>
+      <div class="images">
+          <a href="imagenes/magia infantil/_DSC0122.JPG" data-lightbox="cumple 8 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/_DSC0122.JPG" alt="cumple 5 años magia" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/_DSC0425.JPG" data-lightbox="cumple 8 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/_DSC0425.JPG" alt="cumple 8 años magia" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/_DSC0452.JPG" data-lightbox="cumple 8 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/_DSC0452.JPG" alt="cumple 5 años magia" class="thumbnail">
+          </a>
+        </div>
+        <div class="description">
+          <h4>Cumple 8 años, Resistencia</h4>
+        </div>
+      <div class="images">
+          <a href="imagenes/magia infantil/67228739_2384276988450782_5935805585172725760_n.jpg" data-lightbox="cumple 5 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/67228739_2384276988450782_5935805585172725760_n.jpg" alt="cumple 5 años magia" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/67532510_2384276891784125_7447686300167045120_n.jpgpg" data-lightbox="cumple 5 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/67532510_2384276891784125_7447686300167045120_n.jpg" alt="cumple 5 años magia" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/67670289_2384277098450771_6422545368310874112_n.jpg" data-lightbox="cumple 5 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/67670289_2384277098450771_6422545368310874112_n.jpg" alt="cumple 5 años magia" class="thumbnail">
+          </a>
+        </div>
+        <div class="description">
+          <h4>Cumple 5 años Julieta, Corrientes</h4>
+        </div>
+      <div class="images">
+          <a href="imagenes/magia infantil/IMG-20250522-WA0054.jpg" data-lightbox="cumple 10 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/IMG-20250522-WA0054.jpg" alt="cumple 10 años magia" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/IMG-20250522-WA0058.jpg" data-lightbox="cumple 10 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/IMG-20250522-WA0058.jpg" alt="cumple 10 años magia" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/IMG-20250522-WA0065.jpg" data-lightbox="cumple 10 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/IMG-20250522-WA0065.jpg" alt="cumple 10 años magia" class="thumbnail">
+          </a>
+        </div>
+        <div class="description">
+          <h4>Cumple 10 años, Resistencia</h4>
+        </div>
+      </div>
+      <div class="work">
+        <div class="images">
+          <a href="imagenes/magia infantil/IMG-20250509-WA0007.jpg" data-lightbox="cumple 9 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/IMG-20250509-WA0007.jpg" alt="cumple 9 años magia" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/IMG-20250509-WA0010.jpg" data-lightbox="cumple 9 años magia" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/IMG-20250509-WA0010.jpg" alt="magia 9 años" class="thumbnail">
+          </a>
+        </div>
+        <div class="description">
+          <h4>Cumple 9 años de Isabel, Resistencia</h4>
+        </div>
+      </div>
+      <div class="work">
+        <div class="images">
+          <a href="imagenes/magia infantil/magia infantil.jpg" data-lightbox="magia solidaria" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/magia infantil.jpg" alt="magia solidaria" class="thumbnail">
+          </a>
+        </div>
+        <div class="description">
+          <h4>Evento Solidario Barrial, Resistencia</h4>
+        </div>
+      </div>
+      <div class="work">
+        <div class="images">
+          <a href="imagenes/magia infantil/14572313_10205846671485042_6584848515147086297_n.jpg" data-lightbox="magia gral san martin" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/14572313_10205846671485042_6584848515147086297_n.jpg" alt="magia gral san martin" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/21106547_1825785644103618_7773734639246775213_n.jpg" data-lightbox="magia gral san martin" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/21106547_1825785644103618_7773734639246775213_n.jpg" alt="magia gral sna martin" class="thumbnail">
+          </a>
+        </div>
+        <div class="description">
+          <h4>Evento Solidario Campestre, General San Martin</h4>
+        </div>
+      </div>
+      <div class="work">
+        <div class="images">
+          <a href="imagenes/magia infantil/14192082_10207076480766072_4090548067575059185_n.jpg" data-lightbox="magia san martin" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/14192082_10207076480766072_4090548067575059185_n.jpg" alt="magia gral san martin" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/14232469_177723459323981_563329200220894292_n.jpg" data-lightbox="magia san martin" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/14232469_177723459323981_563329200220894292_n.jpg" alt="magia gral sna martin" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/14233197_10207076480046054_709878948927610484_n.jpg" data-lightbox="magia san martin" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/14233197_10207076480046054_709878948927610484_n.jpg" alt="magia gral sna martin" class="thumbnail">
+          </a>
+        </div>
+        <div class="description">
+          <h4>Evento Solidario Somos Uno, Resistencia</h4>
+        </div>
+      </div>
+      <div class="work">
+        <div class="images">
+          <a href="imagenes/magia infantil/14125575_10205515604128565_3349134577221081437_o.jpg" data-lightbox="magic gral san martin" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/14125575_10205515604128565_3349134577221081437_o.jpg" alt="magia gral san martin" class="thumbnail">
+          </a>
+          <a href="imagenes/magia infantil/13131250_10204779358442883_1010770827488964020_o.jpg" data-lightbox="magic gral sna martin" data-title="Diseño rt1">
+            <img src="imagenes/magia infantil/13131250_10204779358442883_1010770827488964020_o.jpg" alt="magia gral sna martin" class="thumbnail">
+          </a>
+        </div>
+        <div class="description">
+          <h4>Evento Solidario, General San Martin</h4>
+        </div>
+      </div>
+      <div class="work">
+        <div class="images">
+          <a href="imagenes/magia infantil/magia el rabon.jpg" data-lightbox="rabonsantafe" data-title="Proyecto1">
+            <img src="imagenes/magia infantil/magia el rabon.jpg" alt="rabonsantafe" class="thumbnail">
+          </a>
+        </div>
+        <div class="description">
+          <h4>Municipio El Rabon (Santa Fe)</h4>
+        </div>
+      </div>
+    </div>
 
+  </div>
+</section>
+
+   
   <footer>
     <p>© 2025 Domum Diseño y Construcción. Todos los derechos reservados.</p>
     <p>Seguinos en nuestras redes sociales</p>
@@ -454,6 +312,12 @@
   <div id="modal" onclick="cerrarImagen()" style="display: none;">
     <img id="img-ampliada" src="" alt="imagen ampliada">
   </div>
+
+<!-- Lightbox2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+<!-- Lightbox2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
 
 </body>
