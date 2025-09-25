@@ -82,11 +82,13 @@ nav ul li a:hover {
   width: 100%;
 }
 .hero-img {
+  display: block;
   width: 100%;
-  height: 320px;
+  height: 400px;
   object-fit: cover;
   border-bottom: 4px solid var(--primary);
 }
+
 
 /* Frase */
 .phrase {
@@ -118,58 +120,76 @@ nav ul li a:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;       /* antes era max-width */
+  margin: 0;         /* sacamos el auto */
 }
 
-.columna h3 {
-  font-size: 1.9rem;
-  text-align: center;
-  margin-bottom: 25px;
-  color: #fff;
-  text-shadow: 0 0 8px #e50914;
-}
-
-/* Tarjeta de trabajo */
-.work {
-  background-color: #1a1a1a;
-  padding: 20px;
+/* Caja para cada sección (columna) */
+.columna {
+  background: rgba(255, 255, 255, 0.05); /* fondo sutil translúcido */
+  border: 2px solid #e50914; /* borde rojo */
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(229,9,20,0.3);
-  margin-bottom: 30px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  margin-bottom: 40px; /* separación entre secciones */
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
 }
 
-.work:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(229, 9, 20, 0.5);
+/* Título de cada sección */
+.columna h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #e50914;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(229, 9, 20, 0.8);
+  border-bottom: 2px solid #e50914;
+  padding-bottom: 10px;
 }
 
-/* Imágenes en grilla uniforme */
-.images {
+/* Ajuste de las tarjetas de evento */
+.work {
+  margin-bottom: 25px;
+}
+
+
+/* Imágenes en grilla horizontal y responsiva */
+.work .images {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-wrap: nowrap;   /* todas en fila */
   justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  overflow-x: auto;    /* scroll horizontal si no entran */
+  scrollbar-width: thin; /* scroll fino en navegadores modernos */
 }
 
-.images a img.thumbnail {
-  width: 220px;   /* 🔥 tamaño uniforme */
-  height: 160px;  /* 🔥 mismo alto */
-  object-fit: cover;
+.work .images a {
+  flex: 0 0 auto;  /* evita que se achiquen */
+}
+
+.work .images a img.thumbnail {
+  width: 220px;      /* todas iguales de ancho */
+  height: 150px;     /* todas iguales de alto */
+  object-fit: cover; /* recorta sin deformar */
   border-radius: 8px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.images a img.thumbnail:hover {
-  transform: scale(1.1);
+.work .images a img.thumbnail:hover {
+  transform: scale(1.08);
   box-shadow: 0 0 15px #e50914;
 }
 
-/* Descripción */
-.description h4 {
+/* Responsive */
+@media (max-width: 768px) {
+  .work .images {
+    justify-content: flex-start; /* alineado a la izquierda en cel */
+  }
+  .work .images a img.thumbnail {
+    width: 160px;
+    height: 110px;
+  }
+}
+
   font-size: 1.4rem;
   margin: 12px 0;
   color: #e50914;
