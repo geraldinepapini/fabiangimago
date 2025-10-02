@@ -137,6 +137,30 @@ nav ul li a:hover {
 .btn-vermas:hover {
   background: #0c7da8;
 }
+.servicio .info {
+  max-width: 800px;           /* limita el ancho del texto */
+  margin: 0 auto;             /* centra el bloque */
+  text-align: justify;        /* texto justificado */
+  line-height: 1.8;           /* mejora la legibilidad */
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.03); /* leve contraste */
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+/* Estilo del párrafo */
+.servicio .info p {
+  text-indent: 25px;          /* sangría en primera línea */
+  margin-bottom: 15px;
+}
+
+/* Resaltar primera letra del párrafo */
+.servicio .info p::first-letter {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-right: 5px;
+}
 
 /* ======= banner testimonios ======= */
 .testimonios-banner {
