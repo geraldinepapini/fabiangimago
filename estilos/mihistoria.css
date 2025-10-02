@@ -137,39 +137,51 @@ nav ul li a:hover {
 .historia-texto {
   flex: 1;
   text-align: justify;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02); /* leve contraste */
+  border-radius: 10px;
+  line-height: 1.8;
 }
 
+/* Título */
 .historia-texto h3 {
   color: red;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid red;
+  padding-bottom: 8px;
 }
 
+/* Párrafos */
 .historia-texto p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  text-align: justify;
+  text-indent: 25px; /* sangría en la primera línea */
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .historia-contenido {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Resaltar la primera letra de cada párrafo */
+.historia-texto p::first-letter {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: red;
+  margin-right: 5px;
+  float: left;
+  line-height: 1;
+}
 
-  .historia-fotos {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .historia-fotos img {
-    width: 45%;
-    height: 120px;
+/* Mejor lectura en pantallas grandes */
+@media (min-width: 992px) {
+  .historia-texto {
+    column-count: 2;       /* divide en dos columnas */
+    column-gap: 40px;
   }
 }
+
 
 /* Banner Cotización Show */
 .contact-form {
