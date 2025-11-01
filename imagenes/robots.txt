@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.fabiangimago.com.ar/sitemap.xml
+
+# Bloquea carpetas internas si las tuvieras
+Disallow: /estilos/
+Disallow: /imagenes/
+Disallow: /scripts/
+
+# Información del sitio
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
