@@ -1,16 +1,17 @@
+# robots.txt para www.fabiangimago.com.ar
+# Permite que Google y otros motores indexen el sitio correctamente
+
 User-agent: *
 Allow: /
+Disallow: /imagenes/
+Disallow: /estilos/
+Disallow: /scripts/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /404.html
 
+# Enlace al sitemap (muy importante)
 Sitemap: https://www.fabiangimago.com.ar/sitemap.xml
 
-# Bloquea carpetas internas si las tuvieras
-Disallow: /estilos/
-Disallow: /imagenes/
-Disallow: /scripts/
-
-# Información del sitio
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
+# Recomendación: limitar el crawl-delay si el hosting es chico
+Crawl-delay: 10
