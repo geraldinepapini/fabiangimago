@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cotizá tu show de magia | Fabián Gi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<style>
+  :root{
+    --telon:#0b0516; --telon-2:#2b1257; --papel:#f8f6fc; --tinta:#1a0e2e;
+    --oro:#e10b17; --oro-claro:#efe6ff; --gris:#6a5f80; --linea:#ddd5ee; --error:#b3261e;
+    --serif: "Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --sans: "Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--telon);color:var(--tinta);font-family:var(--sans);min-height:100vh;
+       background-image:radial-gradient(ellipse at top,var(--telon-2),var(--telon) 60%)}
+  .wrap{max-width:640px;margin:0 auto;padding:24px 16px 48px}
+  .marca{color:var(--oro-claro);text-align:center;font-family:"Montserrat",system-ui,sans-serif;font-size:1rem;margin:8px 0 18px}
+  .marca strong{display:block;font-size:1.6rem;font-weight:700;color:#fff}
+  .marca .logo{display:block;margin:0 auto;width:70%;max-width:300px;height:auto}
+  .marca .marca-texto{display:none}
+  .panel{background:var(--papel);border-radius:14px;padding:24px 20px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+  .barra{height:6px;background:rgba(255,255,255,.18);border-radius:3px;overflow:hidden;margin-bottom:14px}
+  .barra div{height:100%;width:0;background:var(--oro);transition:width .3s}
+  h1{font-family:var(--serif);font-weight:800;font-size:1.5rem;line-height:1.25;margin:0 0 6px}
+  .pista{color:var(--gris);margin:0 0 18px;font-size:.95rem}
+  .campo{display:block;margin-bottom:16px}
+  .campo > span.et{display:block;font-weight:600;margin-bottom:6px;font-size:.95rem}
+  input[type=text],input[type=number],input[type=tel],input[type=email],input[type=date],input[type=time],select,textarea{
+    width:100%;font:inherit;padding:12px;border:1.5px solid var(--linea);border-radius:8px;background:#fff;color:var(--tinta)}
+  textarea{min-height:100px;resize:vertical}
+  input:focus-visible,select:focus-visible,textarea:focus-visible,.opcion input:focus-visible + span,button:focus-visible{
+    outline:3px solid var(--oro);outline-offset:2px}
+  .opciones{display:grid;gap:10px}
+  .opcion{display:block;cursor:pointer}
+  .opcion input{position:absolute;opacity:0;pointer-events:none}
+  .opcion span{display:block;padding:14px;border:1.5px solid var(--linea);border-radius:10px;background:#fff;font-weight:500}
+  .opcion input:checked + span{border-color:var(--oro);background:var(--oro-claro);font-weight:600}
+  .opcion:hover span{border-color:var(--oro)}
+  .nav{display:flex;gap:10px;margin-top:22px}
+  button{font:inherit;font-weight:600;border-radius:8px;padding:13px 18px;cursor:pointer;border:1.5px solid var(--tinta);background:transparent;color:var(--tinta)}
+  button.principal{flex:1;background:var(--oro);border-color:var(--oro);color:#fff;border-radius:999px}
+  #atras{border-radius:999px}
+  button:disabled{opacity:.5;cursor:wait}
+  #error{color:var(--error);font-weight:600;min-height:1.3em;margin:6px 0 0;font-size:.92rem}
+  .wa{display:inline-block;margin-top:14px;background:#1f9d55;color:#fff;text-decoration:none;font-weight:700;padding:14px 22px;border-radius:999px}
+  .oculto{display:none !important}
+  .presu{margin:8px 0 6px;border-top:2px solid var(--oro);padding-top:6px}
+  .presu h2{font-family:var(--serif);font-size:1.2rem;margin:14px 0 10px}
+  .presu iframe{width:100%;height:440px;border:1.5px solid var(--linea);border-radius:8px;background:#fff}
+  .presu .acciones{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  .presu .acciones a{display:inline-block;padding:12px 16px;border:1.5px solid var(--tinta);border-radius:8px;color:var(--tinta);font-weight:600;text-decoration:none}
+  .presu .nota{font-size:.88rem;color:var(--gris);margin:10px 0 0}
+  .trampa{position:absolute;left:-9999px}
+  @media (min-width:520px){ .opciones.dos{grid-template-columns:1fr 1fr} }
+  @media (prefers-reduced-motion:reduce){ .barra div{transition:none} }
+</style>
+<!-- META PIXEL CODE -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '714360078361144');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=714360078361144&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- END META PIXEL CODE -->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6B9140YN0P">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6B9140YN0P');
+</script>
+</head>
+<body>
+<main class="wrap">
+  <div class="marca">
+    <a href="index.html" aria-label="Volver al inicio"><img class="logo" src="imagenes/logo-horizontal-blanco.png" alt="Fabián Gi, mago e ilusionista"></a>
+  </div>
+  <div class="barra" aria-hidden="true"><div id="prog"></div></div>
+
+  <section class="panel" id="panel-form">
+    <form id="f" novalidate autocomplete="on">
+      <div class="trampa" aria-hidden="true"><label>No completar <input type="text" id="web" tabindex="-1" autocomplete="off"></label></div>
+      <div id="paso"></div>
+      <p id="error" role="alert"></p>
+      <div class="nav">
+        <button type="button" id="atras">Atrás</button>
+        <button type="button" id="seguir" class="principal">Seguir</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="panel" id="panel-fin" hidden>
+    <h1 id="fin-titulo"></h1>
+    <p id="fin-texto" class="pista"></p>
+    <div class="presu" id="fin-presu" hidden>
+      <h2 id="presu-titulo"></h2>
+      <iframe id="presu-frame" title="Presupuesto" hidden></iframe>
+      <div class="acciones">
+        <a id="presu-ver" target="_blank" rel="noopener">Abrir el PDF</a>
+        <a id="presu-bajar" target="_blank" rel="noopener" hidden>Descargar</a>
+      </div>
+      <p class="nota">Es un presupuesto orientativo, sujeto a disponibilidad de la fecha.</p>
+    </div>
+    <a id="fin-wa" class="wa" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+  </section>
+</main>
+
+<script>
+/* ============ CONFIGURACIÓN ============ */
+const CONFIG = {
+  ENDPOINT: "https://script.google.com/macros/s/AKfycbzrYMrFtRLf35RkKDheYjvszmIk4tQ5EJKYNLjcQZx8bAiRTDcei8OC9MlmeXP6JgVCaQ/exec",                 // Pegá acá la URL de tu Apps Script (ver instrucciones)
+  WHATSAPP: "5493624551712",
+  PLAZO: "24 horas",            // Plazo que te comprometés a responder
+  SENA: "",                     // Ej: "30%". Si queda vacío, el texto dice solo "una seña"
+
+  /* PRESUPUESTOS EN PDF (Drive)
+     Se prueban en orden y se usa el PRIMERO que coincida: poné primero los más específicos.
+     "si" = condiciones; todas deben cumplirse. Un valor puede ser texto o lista de opciones.
+     "url" = enlace del PDF en Drive (compartido como "Cualquier persona con el enlace").
+     Si "url" queda vacío, esa regla se ignora.
+     Claves que podés usar en "si" (con el texto exacto de la opción):
+       tipo: infantil | social | escolar | empresa | bar | otro
+       lugarTipo, festejo, magia, motivo, propuesta, frecuencia, localidad
+       personasMin, personasMax (números; cantidad aproximada de personas)
+       edadMin, edadMax (números; edad que cumple, solo en cumpleaños infantil) */
+  PRESUPUESTOS: [
+    { titulo:"Cumpleaños infantil (4 a 7 años)",  si:{tipo:"infantil", edadMin:4, edadMax:7},  url:"https://drive.google.com/file/d/154cOKRraPa0S5vegr7J2oyinuet3mMVn/view?usp=sharing" },
+    { titulo:"Cumpleaños infantil (8 a 12 años)", si:{tipo:"infantil", edadMin:8, edadMax:12}, url:"https://drive.google.com/file/d/1gfOwIgKjjSXjmAUkY4gpuVv9NdIY-Bu-/view?usp=sharing" },
+    { titulo:"Casamiento / 15 años",            si:{tipo:"social", festejo:["Casamiento","15 años"]}, url:"https://drive.google.com/file/d/1XfalhkfvYSS0vxWUEyHJ51CwIOkzv_-c/view?usp=sharing" },
+    { titulo:"Cumpleaños adulto (hasta 50 invitados)",   si:{tipo:"social", festejo:"Cumpleaños adulto", personasMax:50}, url:"https://drive.google.com/file/d/1YgzC2edkuFQTyO3q3SZ4CyhFiSrOzwgn/view?usp=sharing" },
+    { titulo:"Cumpleaños adulto (entre 50 y 80 invitados)", si:{tipo:"social", festejo:"Cumpleaños adulto", personasMin:51, personasMax:80}, url:"https://drive.google.com/file/d/1ROytwIkRj2oo_Rccaxpqh7R4cd_ZlNSN/view?usp=sharing" },
+    { titulo:"Cumpleaños adulto (más de 80 invitados)", si:{tipo:"social", festejo:"Cumpleaños adulto", personasMin:81}, url:"https://drive.google.com/file/d/1XfalhkfvYSS0vxWUEyHJ51CwIOkzv_-c/view?usp=sharing" },
+    { titulo:"Evento social",                   si:{tipo:"social"}, url:"" },
+    { titulo:"Evento escolar",                  si:{tipo:"escolar"}, url:"https://drive.google.com/file/d/12tiip8j5NiIxvYaQ1sA8KaXPEekWJDk5/view?usp=sharing" },
+    { titulo:"Evento empresarial",              si:{tipo:"empresa"}, url:"https://drive.google.com/file/d/15I8-BWIrx8c6scnSKaP95UnkKxE-Rt9y/view?usp=sharing" },
+    { titulo:"Local Gastrónomico",               si:{tipo:"bar"}, url:"https://drive.google.com/file/d/1FiTXQyEkEvfoyeeIGw_BGOPtlt90TDfG/view?usp=sharing" }
+  ]
+};
+const LOCALIDADES = ["Resistencia","Corrientes","Fontana","Barranqueras","Puerto Vilelas","Puerto Tirol","Otra localidad"];
+const TIPOS = {infantil:"Cumpleaños infantil", social:"Cumpleaños adulto / casamiento / 15 años",
+               escolar:"Evento escolar o jardín", empresa:"Evento empresarial", bar:"Restaurante / bar", otro:"Otro"};
+
+/* ============ PASOS (la lógica condicional está en "show") ============ */
+const es = t => d => d.tipo === t;
+const STEPS = [
+ {id:"tipo", title:"¿Qué tipo de evento es?", hint:"Elegí la opción que más se parezca.", fields:[
+   {key:"tipo", type:"choice", label:"Tipo de evento", required:true, options:[
+     {v:"infantil",l:"🎈 Cumpleaños infantil"},{v:"social",l:"🥂 Cumpleaños adulto, casamiento o 15 años"},
+     {v:"escolar",l:"🏫 Evento escolar o de jardín"},{v:"empresa",l:"💼 Evento empresarial"},
+     {v:"bar",l:"🍽️ Restaurante o bar"},{v:"otro",l:"✨ Otro"}]}]},
+
+ // --- Rama infantil
+ {id:"inf", show:es("infantil"), title:"Contame del cumpleaños", fields:[
+   {key:"edad", type:"number", label:"¿Cuántos años cumple?", required:true, min:1, max:18},
+   {key:"ninos", type:"number", label:"Cantidad de niños (aprox.)", required:true, min:1},
+   {key:"adultos", type:"number", label:"Cantidad de adultos (aprox.)", min:0}]},
+ {id:"inf-lugar", show:es("infantil"), title:"¿Dónde es la fiesta?", fields:[
+   {key:"lugarTipo", type:"choice", label:"Tipo de lugar", required:true, options:["Pelotero","Salón de fiestas","Casa o quincho","Otro"]}]},
+
+ // --- Rama social
+ {id:"soc", show:es("social"), title:"¿Qué festejan?", fields:[
+   {key:"festejo", type:"choice", label:"Festejo", required:true, options:["Cumpleaños adulto","Casamiento","15 años","Cena o reunión familiar","Otro"]}]},
+ {id:"soc-inv", show:es("social"), title:"¿Cuántos invitados son?", fields:[
+   {key:"invitados", type:"number", label:"Cantidad de invitados (aprox.)", required:true, min:1}]},
+
+ // --- Rama escolar
+ {id:"esc", show:es("escolar"), title:"Contame del evento escolar", fields:[
+   {key:"institucion", type:"text", label:"Nombre de la escuela o jardín", required:true},
+   {key:"alumnos", type:"number", label:"Cantidad de alumnos (aprox.)", required:true, min:1},
+   {key:"edades", type:"multi", label:"Edades de los alumnos", required:true, options:["3 a 5 años","6 a 8 años","9 a 12 años","Más de 12"]}]},
+
+ // --- Rama empresarial
+ {id:"emp", show:es("empresa"), title:"Contame del evento de la empresa", fields:[
+   {key:"empresa", type:"text", label:"Nombre de la empresa", required:true},
+   {key:"motivo", type:"choice", label:"Motivo", required:true, options:["Día festivo","Jornada de integración","Lanzamiento de producto","Aniversario","Otro"]},
+   {key:"personasEmp", type:"number", label:"Cantidad de personas (aprox.)", required:true, min:1}]},
+
+ // --- Tipo de magia: social y empresa
+ {id:"magia", show:d=>d.tipo==="social"||d.tipo==="empresa", title:"¿Qué tipo de magia te imaginás?", hint:"Si no sabés, elegí la última y te oriento.", fields:[
+   {key:"magia", type:"choice", label:"Tipo de magia", required:true, options:[
+     "Magia de cerca (mesa por mesa)","Show de salón o escenario","Las dos","No sé, recomendame"]}]},
+
+ // --- Rama bar / restaurante
+ {id:"bar", show:es("bar"), title:"Contame del local", fields:[
+   {key:"local", type:"text", label:"Nombre del local", required:true}]},
+ {id:"bar-prop", show:es("bar"), title:"¿Qué propuesta te interesa?", fields:[
+   {key:"propuesta", type:"choice", label:"Propuesta", required:true, options:[
+     "Animación mágica de mesa en mesa","Show central de magia","Magia para fechas especiales","Show familiar o infantil para ciertos días","Otra"]},
+   {key:"frecuencia", type:"choice", label:"Frecuencia deseada", required:true, options:[
+     "Un único evento","Una vez por mes","Todos los fines de semana","En fechas especiales","A definir"]}]},
+
+ // --- Rama otro
+ {id:"otro", show:es("otro"), title:"Contame de qué se trata", fields:[
+   {key:"descripcion", type:"textarea", label:"Describí tu evento", required:true}]},
+
+ // --- Común
+ {id:"cuando", title:"¿Cuándo es?", hint:"Si todavía no está confirmada, poné la fecha tentativa.", fields:[
+   {key:"fecha", type:"date", label:"Fecha del evento", requiredIf:d=>d.tipo!=="bar"},
+   {key:"horario", type:"time", label:"Horario de inicio (aprox.)"}]},
+ {id:"donde", title:"¿Dónde es?", hint:"Lo uso para calcular traslados.", fields:[
+   {key:"localidad", type:"select", label:"Localidad", required:true, options:LOCALIDADES},
+   {key:"localidadOtra", type:"text", label:"¿Cuál?", required:true, show:d=>d.localidad==="Otra localidad"},
+   {key:"direccion", type:"text", label:"Nombre del salón o dirección (opcional)"}]},
+ {id:"contacto", title:"¿Cómo te contacto?", hint:"Te mando el presupuesto por WhatsApp.", fields:[
+   {key:"nombre", type:"text", label:"Nombre y apellido", required:true, auto:"name"},
+   {key:"whatsapp", type:"tel", label:"WhatsApp (con código de área, sin 0 ni 15)", required:true, auto:"tel", placeholder:"362 4551712"},
+   {key:"email", type:"email", label:"Email (opcional)", auto:"email"}]},
+ {id:"origen", title:"Último paso", fields:[
+   {key:"origen", type:"select", label:"¿Cómo me conociste?", options:["Instagram","Facebook","TikTok","Google","YouTube","Recomendación","Ya me viste en otro evento","Otro"]},
+   {key:"comentarios", type:"textarea", label:"¿Algo más que quieras contarme? (opcional)"}]}
+];
+
+/* ============ MOTOR ============ */
+const data = {}; let cur = "tipo"; const hist = [];
+const $ = id => document.getElementById(id);
+const norm = o => typeof o === "string" ? {v:o,l:o} : o;
+const visible = () => STEPS.filter(s => !s.show || s.show(data));
+const fieldOn = f => !f.show || f.show(data);
+const isReq = f => f.required || (f.requiredIf && f.requiredIf(data));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function fieldHTML(f){
+  const v = data[f.key], req = isReq(f) ? "" : "";
+  let body = "";
+  if (f.type === "choice" || f.type === "multi"){
+    const multi = f.type === "multi";
+    body = `<div class="opciones ${f.options.length>3?"dos":""}">` + f.options.map(norm).map(o=>{
+      const on = multi ? (v||[]).includes(o.v) : v === o.v;
+      return `<label class="opcion"><input type="${multi?"checkbox":"radio"}" name="${f.key}" value="${esc(o.v)}" ${on?"checked":""}><span>${esc(o.l)}</span></label>`;
+    }).join("") + `</div>`;
+    return `<fieldset class="campo" data-k="${f.key}" style="border:0;padding:0;margin:0 0 16px"><legend class="et" style="font-weight:600;margin-bottom:8px;font-size:.95rem">${esc(f.label)}</legend>${body}</fieldset>`;
+  }
+  const val = v === undefined ? "" : esc(v);
+  if (f.type === "select"){
+    body = `<select name="${f.key}"><option value="">Seleccioná…</option>` + f.options.map(o=>`<option ${v===o?"selected":""}>${esc(o)}</option>`).join("") + `</select>`;
+  } else if (f.type === "textarea"){
+    body = `<textarea name="${f.key}">${val}</textarea>`;
+  } else {
+    const extra = (f.min!==undefined?` min="${f.min}"`:"") + (f.max!==undefined?` max="${f.max}"`:"")
+      + (f.type==="date"?` min="${new Date().toISOString().slice(0,10)}"`:"")
+      + (f.type==="number"?` inputmode="numeric"`:"") + (f.auto?` autocomplete="${f.auto}"`:"")
+      + (f.placeholder?` placeholder="${esc(f.placeholder)}"`:"");
+    body = `<input type="${f.type}" name="${f.key}" value="${val}"${extra}>`;
+  }
+  return `<label class="campo" data-k="${f.key}"><span class="et">${esc(f.label)}</span>${body}</label>`;
+}
+
+function render(){
+  const vs = visible(), i = Math.max(0, vs.findIndex(s => s.id === cur)), s = vs[i];
+  $("paso").innerHTML = `<h1>${esc(s.title)}</h1>` + (s.hint ? `<p class="pista">${esc(s.hint)}</p>` : "") + s.fields.map(fieldHTML).join("");
+  $("prog").style.width = Math.round(((i + 1) / vs.length) * 100) + "%";
+  $("atras").style.visibility = hist.length ? "visible" : "hidden";
+  $("seguir").textContent = i === vs.length - 1 ? "Enviar consulta" : "Seguir";
+  $("error").textContent = "";
+  applyVis(s);
+  const first = $("paso").querySelector("input:not([type=radio]):not([type=checkbox]),select,textarea");
+  if (first && !/Android|iPhone|iPad/i.test(navigator.userAgent)) first.focus();
+}
+function applyVis(s){
+  s.fields.forEach(f => { const el = $("paso").querySelector(`[data-k="${f.key}"]`); if (el) el.classList.toggle("oculto", !fieldOn(f)); });
+}
+const stepNow = () => visible().find(s => s.id === cur);
+
+$("paso").addEventListener("change", e => {
+  const t = e.target, k = t.name; if (!k) return;
+  if (t.type === "checkbox") data[k] = [...$("paso").querySelectorAll(`input[name="${k}"]:checked`)].map(x => x.value);
+  else data[k] = t.value;
+  const s = stepNow(); applyVis(s);
+  if (s.fields.length === 1 && t.type === "radio") setTimeout(next, 220);
+});
+$("paso").addEventListener("input", e => { const t = e.target; if (t.name && t.type !== "radio" && t.type !== "checkbox") data[t.name] = t.value; });
+$("f").addEventListener("keydown", e => { if (e.key === "Enter" && e.target.tagName !== "TEXTAREA"){ e.preventDefault(); next(); } });
+$("seguir").onclick = next;
+$("atras").onclick = () => { if (hist.length){ cur = hist.pop(); render(); } };
+
+function validate(s){
+  for (const f of s.fields){
+    if (!fieldOn(f)) continue;
+    const v = data[f.key], vacio = v === undefined || v === "" || (Array.isArray(v) && !v.length);
+    if (isReq(f) && vacio) return `Completá: ${f.label.replace(/\s*\(.*\)/,"")}.`;
+    if (vacio) continue;
+    if (f.type === "tel" && !/^\d{8,13}$/.test(String(v).replace(/\D/g,""))) return "Revisá el WhatsApp: escribilo con código de área, sin 0 ni 15.";
+    if (f.type === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) return "Revisá el email.";
+    if (f.type === "date" && v < new Date().toISOString().slice(0,10)) return "La fecha no puede ser anterior a hoy.";
+    if (f.type === "number" && (Number(v) < (f.min ?? 0))) return `Revisá el número en: ${f.label}.`;
+  }
+  return "";
+}
+
+function next(){
+  const vs = visible(), i = vs.findIndex(s => s.id === cur), s = vs[i], msg = validate(s);
+  if (msg){ $("error").textContent = msg; return; }
+  if (i === vs.length - 1) return enviar();
+  hist.push(cur); cur = vs[i + 1].id; render();
+}
+
+/* ============ ELECCIÓN DEL PRESUPUESTO ============ */
+function elegirPresupuesto(out, personas){
+  const n = Number(personas) || 0;
+  for (const r of CONFIG.PRESUPUESTOS){
+    if (!r.url) continue;
+    const ok = Object.entries(r.si || {}).every(([k, v]) => {
+      if (k === "personasMin") return n >= v;
+      if (k === "personasMax") return n <= v;
+      if (k === "edadMin") return Number(out.edad) >= v;
+      if (k === "edadMax") return Number(out.edad) <= v;
+      if (out[k] === undefined) return false;
+      const dadas = String(out[k]).split(", ");
+      return (Array.isArray(v) ? v : [v]).some(x => dadas.includes(x));
+    });
+    if (ok) return r;
+  }
+  return null;
+}
+
+/* ============ ENVÍO ============ */
+const CORE = new Set(["tipo","nombre","whatsapp","email","fecha","horario","localidad","localidadOtra","origen","magia","propuesta"]);
+function payload(){
+  const out = {}, labels = {};
+  visible().forEach(s => s.fields.forEach(f => {
+    labels[f.key] = f.label.replace(/\s*\(.*\)/,"");
+    if (!fieldOn(f)) return;
+    const v = data[f.key]; if (v === undefined || v === "" || (Array.isArray(v) && !v.length)) return;
+    out[f.key] = Array.isArray(v) ? v.join(", ") : String(v).trim();
+  }));
+  const n = k => Number(out[k]) || 0;
+  const personas = {infantil:n("ninos")+n("adultos"), social:n("invitados"), escolar:n("alumnos"), empresa:n("personasEmp")}[out.tipo] || "";
+  const detalle = Object.keys(out).filter(k => !CORE.has(k)).map(k => `${labels[k]}: ${out[k]}`).join(" | ");
+  const manual = out.localidad === "Otra localidad";   // otra ciudad: presupuesto a medida (traslado por distancia)
+  const pres = manual ? null : elegirPresupuesto(out, personas);
+  return {
+    _pres: pres, _manual: manual, presupuestoNombre: manual ? "A medida (otra localidad)" : (pres ? pres.titulo : ""),
+    web: $("web").value, tipo: TIPOS[out.tipo], nombre: out.nombre, whatsapp: out.whatsapp.replace(/\D/g,"").replace(/^0+/,""),
+    email: out.email || "", fechaEvento: out.fecha || "", horario: out.horario || "",
+    localidad: out.localidad === "Otra localidad" ? (out.localidadOtra || "Otra") : out.localidad,
+    personas, tipoMagia: out.magia || out.propuesta || "", origen: out.origen || "", detalle
+  };
+}
+
+async function enviar(){
+  const p = payload(), pres = p._pres, manual = p._manual; delete p._pres; delete p._manual;
+  const btn = $("seguir"); btn.disabled = true; btn.textContent = "Enviando…";
+  let guardado = false;
+  if (CONFIG.ENDPOINT){
+    try {
+      await fetch(CONFIG.ENDPOINT, {method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(p)});
+      guardado = true;
+    } catch (e) { guardado = false; }
+  }
+  if (guardado){ try { if (window.fbq) fbq("track","Lead"); if (window.gtag) gtag("event","generate_lead"); } catch (e) {} }
+  const resumen = `Hola Fabián, soy ${p.nombre}. Quiero cotizar un show: ${p.tipo}` + (p.fechaEvento ? `, fecha ${p.fechaEvento}` : "") + `, en ${p.localidad}.`
+    + (pres ? " Vi el presupuesto y quiero confirmar disponibilidad." : manual ? " Mi evento es en otra localidad y necesito el presupuesto con el traslado." : "");
+  $("fin-wa").href = `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(resumen)}`;
+  $("panel-form").hidden = true; $("panel-fin").hidden = false; $("prog").style.width = "100%";
+  const primer = p.nombre.split(" ")[0];
+  const sena = CONFIG.SENA ? `una seña del ${CONFIG.SENA}` : "una seña";
+  if (pres){
+    const id = (pres.url.match(/\/d\/([\w-]+)/) || pres.url.match(/[?&]id=([\w-]+)/) || [])[1];
+    $("fin-presu").hidden = false;
+    $("presu-titulo").textContent = pres.titulo || "Tu presupuesto";
+    $("presu-ver").href = pres.url;
+    if (id){
+      $("presu-frame").src = "https://drive.google.com/file/d/" + id + "/preview"; $("presu-frame").hidden = false;
+      $("presu-bajar").href = "https://drive.google.com/uc?export=download&id=" + id; $("presu-bajar").hidden = false;
+    }
+    $("fin-titulo").textContent = guardado ? `¡Gracias, ${primer}! Acá está tu presupuesto` : "Acá está tu presupuesto";
+    $("fin-texto").textContent = guardado
+      ? `Escribime por WhatsApp para confirmar la disponibilidad de tu fecha. La reserva se concreta con ${sena}.`
+      : "No pudimos guardar tu consulta, pero escribime por WhatsApp con el botón de abajo y seguimos desde ahí.";
+  } else if (manual && guardado){
+    $("fin-titulo").textContent = `¡Gracias, ${primer}! Recibí tu consulta`;
+    $("fin-texto").textContent = `Como tu evento es en otra localidad, calculo el traslado a medida. Te envío el presupuesto por WhatsApp en un plazo de ${CONFIG.PLAZO}.`;
+  } else if (guardado){
+    $("fin-titulo").textContent = `¡Gracias, ${primer}! Recibí tu consulta`;
+    $("fin-texto").textContent = `Te respondo con el presupuesto por WhatsApp en un plazo de ${CONFIG.PLAZO}. Si querés adelantar algo, escribime.`;
+  } else {
+    $("fin-titulo").textContent = "No pudimos guardar tu consulta";
+    $("fin-texto").textContent = "Escribime por WhatsApp con el botón de abajo y te cotizo igual.";
+  }
+}
+(function(){
+  const q = new URLSearchParams(location.search), t = q.get("tipo"), m = q.get("magia");
+  if (t && TIPOS[t]){ data.tipo = t; hist.push("tipo"); cur = visible()[1].id; }
+  if (m) data.magia = m;
+})();
+render();
+</script>
+</body>
+</html>

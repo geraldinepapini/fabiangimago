@@ -1,0 +1,40 @@
+MAPA DE FOTOS: nombre en la web <- archivo original
+(Las marcadas con * tienen nombre 'Gemini' o título generado: revisá que sean tus fotos reales o retocadas de fotos reales)
+
+  imagenes/portfolio/infantil-01.jpg  <-  infantil/IMG-20251021-WA0019.jpg
+  imagenes/portfolio/infantil-02.jpg  <-  infantil/IMG-20251021-WA0021.jpg
+  imagenes/portfolio/infantil-03.jpg  <-  infantil/IMG-20260724-WA0062.jpg
+  imagenes/portfolio/infantil-04.jpg  <-  infantil/Imagen de WhatsApp 2025-09-24 a las 13.39.22_65ea1115.jpg
+  imagenes/portfolio/infantil-05.jpg  <-  infantil/Imagen de WhatsApp 2025-12-02 a las 08.48.58_d8c0717d.jpg
+  imagenes/portfolio/infantil-06.jpg  <-  infantil/WhatsApp Image 2026-01-01 at 15.38.09.jpeg
+  imagenes/portfolio/infantil-07.jpg  <-  infantil/WhatsApp Image 2026-02-24 at 17.44.22.jpeg
+  imagenes/portfolio/infantil-08.jpg  <-  infantil/WhatsApp Image 2026-09-24 at 19.59.50.jpeg
+  imagenes/portfolio/infantil-09.jpg  <-  infantil/WhatsApp Image 2026-09-24 at 20.01.42 (2).jpeg
+  imagenes/portfolio/infantil-10.jpg  <-  infantil/f57149b9-eb6a-4d34-82a6-58acc6839bc6.jpg
+* imagenes/portfolio/infantil-11.jpg  <-  infantil/Gemini_Generated_Image_9i7yw9i7yw9i7yw9.jfif
+* imagenes/portfolio/infantil-12.jpg  <-  infantil/Gemini_Generated_Image_b4ibwrb4ibwrb4ib.jfif
+* imagenes/portfolio/infantil-13.jpg  <-  infantil/Gemini_Generated_Image_mpy9gampy9gampy9.jfif
+* imagenes/portfolio/infantil-14.jpg  <-  infantil/Gemini_Generated_Image_vywnibvywnibvywn.jfif
+  imagenes/portfolio/cerca-01.jpg  <-  cerca/50b059f3-8e85-4b60-ba37-03624bac4706.png
+  imagenes/portfolio/cerca-02.jpg  <-  cerca/653ec67b-5368-441d-a8b1-dd9ff5c0f5cc.jpg
+* imagenes/portfolio/cerca-03.jpg  <-  cerca/Gemini_Generated_Image_b40v5kb40v5kb40v.jfif
+* imagenes/portfolio/cerca-04.jpg  <-  cerca/Gemini_Generated_Image_ucq1n6ucq1n6ucq1.jfif
+* imagenes/portfolio/cerca-05.jpg  <-  cerca/Gemini_Generated_Image_vjghgzvjghgzvjgh.jfif
+* imagenes/portfolio/cerca-06.jpg  <-  cerca/Noche de risas en el bar.png
+* imagenes/portfolio/cerca-07.jpg  <-  cerca/Sorpresa entre risas y billetes.png
+  imagenes/portfolio/escenario-01.jpg  <-  salon escenario/mago.boda.animador.fiesta.despedida.jpg
+  imagenes/portfolio/escenario-02.jpg  <-  salon escenario/mago.evento.animador.casamiento.boda.despedida.webp
+  imagenes/portfolio/sesion-01.jpg  <-  sesiones de fotos/2488eabe-eead-45e4-a52d-f5d1cfe537f1.png
+  imagenes/portfolio/sesion-02.jpg  <-  sesiones de fotos/8f142fd3-4163-41f9-8102-fdee75206b49.jpg
+  imagenes/portfolio/sesion-03.jpg  <-  sesiones de fotos/bd183080-099e-42c6-bdf5-94225a48fb03.png
+* imagenes/portfolio/sesion-04.jpg  <-  sesiones de fotos/Gemini_Generated_Image_3k40kr3k40kr3k40.jfif
+* imagenes/portfolio/sesion-05.jpg  <-  sesiones de fotos/Gemini_Generated_Image_e1zvsye1zvsye1zv.jfif
+* imagenes/portfolio/sesion-06.jpg  <-  sesiones de fotos/Gemini_Generated_Image_hnuhsahnuhsahnuh.jfif
+* imagenes/portfolio/sesion-07.jpg  <-  sesiones de fotos/Truco de cartas bajo la mirada de un rey.png
+
+Recortes usados en las tarjetas de servicios:
+  card-infantil.jpg  <- infantil-05
+  card-escenario.jpg <- escenario-02
+  card-cerca.jpg     <- cerca-02
+
+Se usan también: sesion-01 en 'Quién soy', sesion-02 y card-escenario en Misión/Visión de 'Mi historia'.
